@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<title>Event Listener Example</title>
+<style>
+body {
+font-family: Arial;
+text-align: center;
+margin-top: 50px;
+}
+input {
+padding: 10px;
+}
+button {
+padding: 10px 20px;
+cursor: pointer;
+}
+#message {
+margin-top: 20px;
+font-size: 20px;
+}
+</style>
+</head>
+<body>
+<h2>User Interaction</h2>
+<input type="text" id="name"
+placeholder="Enter your name">
+<button id="btn">Click Me</button>
+<p id="message"></p>
+<script>
+const nameInput = document.getElementById("name");
+const button = document.getElementById("btn");
+const message = document.getElementById("message");
+button.addEventListener("click", function() {
+const name = nameInput.value;
+if (name === "") {
+message.textContent = "Please enter your name.";
+} else {
+message.textContent = "Hello, " + name + "!";
+}
+});
+nameInput.addEventListener("input", function() {
+console.log("User is typing...");
+});
+</script>
+</body>
+</html>
