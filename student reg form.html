@@ -1,12 +1,14 @@
+```html
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Student Registration Form</title>
-    </head>
+
+<head>
+    <title>Student Registration Form</title>
+
     <style>
-        
-        form{
+        form {
             border: 1px solid rgb(10, 10, 10);
-            border-radius: 10px;
+            border-radius: 20px;
             padding: 20px;
             width: 400px;
             margin: auto;
@@ -14,29 +16,34 @@
             background-color: rgb(147, 215, 237);
             box-shadow: 6px 10px 14px rgba(0, 0, 0, 0.1);
         }
-        h1{
+
+        h1 {
             text-align: center;
         }
-        label{
+
+        label {
             display: inline-block;
             width: 100px;
             margin-bottom: 10px;
         }
-        input[type="text"], 
-        input[type="number"], 
-        input[type="date"], 
-        input[type="email"], 
-        input[type="password"], 
-        input[type="file"]{
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="email"],
+        input[type="password"],
+        input[type="file"] {
             width: 250px;
             padding: 5px;
             margin-bottom: 10px;
         }
-        input[type="submit"], input[type="reset"]{
-            padding: 5px 10px;
+
+        .button-group {
+            text-align: center;
             margin-top: 10px;
         }
-        #b1{
+
+        #b1 {
             background-color: rgb(33, 186, 79);
             color: white;
             border: 2px solid rgb(15, 15, 15);
@@ -44,16 +51,15 @@
             height: 30px;
             border-radius: 5px;
             cursor: pointer;
-            display: block;
-            margin: 0
-            auto;
-
+            margin: 5px;
         }
-        #b1:hover{
+
+        #b1:hover {
             background-color: rgb(15, 15, 15);
             color: white;
         }
-        #b2{
+
+        #b2 {
             background-color: rgb(235, 48, 48);
             color: white;
             border: 2px solid rgb(15, 15, 15);
@@ -61,57 +67,74 @@
             height: 30px;
             border-radius: 5px;
             cursor: pointer;
-            display: block;
-            margin: 0auto;
+            margin: 5px;
         }
-        #b2:hover{
+
+        #b2:hover {
             background-color: rgb(15, 15, 15);
             color: white;
         }
     </style>
-    <body>
+</head>
 
-        <form>
-            <h1>Student Registration Form</h1>
+<body>
 
-            <label>Reg Id:</label>
-            <input type="number" placeholder="Enter Registration ID"><br><br>
+    <form>
 
-            <label>Name:</label>
-            <input type="text" placeholder="Enter Name"><br><br>
+        <h1>Student Registration Form</h1>
 
-            <label>Gender:</label>
-            <input type="text" placeholder="Enter Gender"><br><br>
+        <label>Reg Id:</label>
+        <input type="number" placeholder="Enter Registration ID">
+        <br><br>
 
-            <label>DOB:</label>
-            <input type="date" placeholder="Enter Date of Birth"><br><br>
+        <label>Name:</label>
+        <input type="text" placeholder="Enter Name">
+        <br><br>
 
-            <label>Ph No:</label>
-            <input type="number" placeholder="Enter Phone Number"><br><br>
+        <label>Gender:</label>
+        <input type="text" placeholder="Enter Gender">
+        <br><br>
 
-            <label>Address:</label>
-            <input type="text" placeholder="Enter Address"><br><br>
+        <label>DOB:</label>
+        <input type="date">
+        <br><br>
 
-            <label>Department:</label>
-            <input type="text" placeholder="Enter Department"><br><br>
+        <label>Ph No:</label>
+        <input type="number" placeholder="Enter Phone Number">
+        <br><br>
 
-            <label>Course:</label>
-            <input type="text" placeholder="Enter Course"><br><br>
+        <label>Address:</label>
+        <input type="text" placeholder="Enter Address">
+        <br><br>
 
-            <label>Email:</label>
-            <input type="email" placeholder="Enter Email"><br><br>
+        <label>Department:</label>
+        <input type="text" placeholder="Enter Department">
+        <br><br>
 
-            <label>Password:</label>
-            <input type="password" placeholder="Enter Password"><br><br>
+        <label>Course:</label>
+        <input type="text" placeholder="Enter Course">
+        <br><br>
 
-            <label>Resume:</label>
-            <input type="file" placeholder="Upload Resume"><br><br>
+        <label>Email:</label>
+        <input type="email" placeholder="Enter Email">
+        <br><br>
 
-            <div class="button-group">
-    <button id="b1">Submit</button>
-    <button id="b2">Reset</button>
-</div>
-        </form>
+        <label>Password:</label>
+        <input type="password" placeholder="Enter Password">
+        <br><br>
 
-    </body>
+        <label>Resume:</label>
+        <input type="file">
+        <br><br>
+
+        <div class="button-group">
+            <button type="submit" id="b1">Submit</button>
+            <button type="reset" id="b2">Reset</button>
+        </div>
+
+    </form>
+
+</body>
+
 </html>
+```

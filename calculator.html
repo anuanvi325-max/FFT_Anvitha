@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Grade Calculator</title>
+      <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+        }
+        .calculator {
+            width: 400px;
+            margin: 50px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        h2 {
+            color: darkblue;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 7px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: blue;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Grade Calculator</h2>
+        <input type="number" id="fft" placeholder="FFT Marks">
+        <input type="number" id="ads" placeholder="ADS Marks">
+        <input type="number" id="bad" placeholder="BAD Marks">
+        <input type="number" id="pst" placeholder="PST Marks">
+        <input type="number" id="cls" placeholder="CLS Marks">
+        <input type="number" id="aui" placeholder="AUI Marks">
+        <input type="number" id="dst" placeholder="DST Marks">
+        <br>
+        <button onclick="calculateGrade()">Calculate Grade</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calculateGrade() {
+            let fft = document.getElementById("fft").value;
+            let ads = document.getElementById("ads").value;
+            let bad = document.getElementById("bad").value;
+            let pst = document.getElementById("pst").value;
+            let cls = document.getElementById("cls").value;
+            let aui = document.getElementById("aui").value;
+            let dst = document.getElementById("dst").value;
+            if (fft == "" || ads == "" || bad == "" ||
+                pst == "" || cls == "" || aui == "" || dst == "") {
+                document.getElementById("result").innerHTML ="Please enter marks for all subjects.";
+                 return;
+            }
+            fft = Number(fft);
+            ads = Number(ads);
+            bad = Number(bad);
+            pst = Number(pst);
+            cls = Number(cls);
+            aui = Number(aui);
+            dst = Number(dst);
+            if (fft < 0 || fft > 100 ||
+                ads < 0 || ads > 100 ||
+                bad < 0 || bad > 100 ||
+                pst < 0 || pst > 100 ||
+                cls < 0 || cls > 100 ||
+                aui < 0 || aui > 100 ||
+                dst < 0 || dst > 100) {
+                document.getElementById("result").innerHTML =
+                    "Marks should be between 0 and 100.";
+                return;
+            }
+            let total = fft + ads + bad + pst + cls + aui + dst;
+            let percentage = total / 7;
+            let grade;
+            if (percentage >= 90) {
+                grade = "A+";
+            }
+            else if (percentage >= 80) {
+                grade = "A";
+            }
+            else if (percentage >= 70) {
+                grade = "B";
+            }
+            else if (percentage >= 60) {
+                grade = "C";
+            }
+            else if (percentage >= 40) {
+                grade = "D";
+            }
+            else {
+                grade = "F (Fail)";
+            }
+            document.getElementById("result").innerHTML =
+                "Total Marks: " + total + " / 700<br>" +
+                "Percentage: " + percentage.toFixed(2) + "%<br>" +
+                "Grade: " + grade;
+        }
+    </script>
+</body>
+</html>
