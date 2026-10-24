@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PawMart - Pet Supplies Store</title>
+<link rel="stylesheet" href="pet.css">
+</head>
+<body>
+
+<header>
+    <h1>PawMart</h1>
+
+    <nav>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#cart">Cart</a></li>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h2>No One Food Supply Store</h2>
+    <p>Select your pet and discover products available especially for them.</p>
+</section>
+
+<section class="pet-selector">
+    <h2>Select Your Pet </h2>
+
+    <button class="pet-btn" onclick="filterProducts('all')">All Pets</button>
+    <button class="pet-btn" onclick="filterProducts('dog')">Dogs</button>
+    <button class="pet-btn" onclick="filterProducts('cat')">Cats</button>
+    <button class="pet-btn" onclick="filterProducts('bird')">Birds</button>
+    <button class="pet-btn" onclick="filterProducts('fish')">Fish</button>
+</section>
+
+<section class="products" id="products">
+
+    <div class="card product" data-pet="dog">
+       <img src="C:\Users\LENOVO\Downloads\dog.jpg" >
+        <div class="card-content">
+            <h3>Premium Dog Food</h3>
+            <p>Nutritious food packed with vitamins for healthy dogs.</p>
+            <div class="price">₹899</div>
+            <button onclick="addToCart('Premium Dog Food',899)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card product" data-pet="cat">
+       <img src="C:\Users\LENOVO\Downloads\cat.jpg">
+        <div class="card-content">
+            <h3>Cat Food</h3>
+            <p>Nutritious food packed with vitamins for healthy cats.</p>
+            <div class="price">₹1299</div>
+            <button onclick="addToCart('Cat Scratching Post',1299)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card product" data-pet="bird">
+       <img src="C:\Users\LENOVO\Downloads\bird.jpg">
+        <div class="card-content">
+            <h3>Bird Food</h3>
+            <p>Colorful Nutritious food packed with vitamins for healthy birds.</p>
+            <div class="price">₹499</div>
+            <button onclick="addToCart('Bird Cage Toy',499)">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="card product" data-pet="fish">
+        <img  src="C:\Users\LENOVO\Downloads\fish.jpg">
+        <div class="card-content">
+            <h3>Fish Food</h3>
+            <p>Nutritious food packed with vitamins for healthy fishes.</p>
+            <div class="price">₹1599</div>
+            <button onclick="addToCart('Fish Tank Filter',1599)">Add to Cart</button>
+        </div>
+    </div>
+
+</section>
+
+<section class="cart" id="cart">
+    <h2>Shopping Cart</h2>
+
+    <ul id="cart-items">
+    </ul>
+
+    <div class="total">
+        Total: ₹<span id="total-price">0</span>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 PawMart Pet Supply Store</p>
+</footer>
+<script>
+    let totalPrice = 0;
+
+function addToCart(productName, price){
+
+    const list = document.getElementById("cart-items");
+
+    const item = document.createElement("li");
+    item.textContent = productName + " - ₹" + price;
+
+    list.appendChild(item);
+
+    totalPrice += price;
+
+    document.getElementById("total-price").innerText = totalPrice;
+}
+
+function filterProducts(type){
+
+    const products = document.querySelectorAll(".product");
+
+    products.forEach(product => {
+
+        if(type === "all"){
+            product.style.display = "block";
+        }
+        else if(product.dataset.pet === type){
+            product.style.display = "block";
+        }
+        else{
+            product.style.display = "none";
+        }
+
+    });
+}
+
+</script>
+</body>
+</html>
